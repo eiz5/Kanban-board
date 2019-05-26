@@ -1,0 +1,103 @@
+$grey-color: #DFE3E6;
+$column-width: 272px;
+$dark-grey-color: #6B808C;
+$green-color: #39C071;
+$white-color: #FFF;
+
+@mixin button-for-hiding () {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: 12px;
+
+  &:before, &:after {
+    position: absolute;
+    top: -1px;
+    left: 8px;
+    content: '';
+    height: 17px;
+    width: 1px;
+    background-color: $dark-grey-color;
+  }
+
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  bottom: 19px;
+  border: none;
+  background-color: $grey-color;
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+
+}
+
+@mixin button-for-showing-field () {
+  position: relative;
+  border: none;
+  border-radius: 3px;
+  background-color: $grey-color;
+  height: 43px;
+  width: $column-width;
+  box-sizing: border-box;
+  padding: 12px 45px 12px 35px;
+  color: $dark-grey-color;
+
+  &:before, &:after {
+    position: absolute;
+    top: 13px;
+    left: 25px;
+    content: '';
+    height: 17px;
+    width: 1px;
+    background-color: $dark-grey-color;
+  }
+
+  &:after {
+    transform: rotate(-90deg);
+  }
+}
+
+@mixin text-field ($height) {
+  width: 100%;
+  height: $height;
+  box-sizing: border-box;
+  padding: 18px 8px 18px 12px;
+
+  background: $white-color;
+  box-shadow: 0px 1px 4px rgba(9, 45, 66, 0.25);
+  border-radius: 3px;
+}
+
+@mixin button-for-adding-item {
+
+  height: 30px;
+  width: 147px;
+
+  margin-top: 8px;
+
+  background: $green-color;
+  border-radius: 3px;
+
+  color: $white-color;
+}
+
+@mixin font-style ($font-weight) {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: 13px;
+}
+
+@mixin field-container (){
+  width: $column-width;
+  padding: 12px;
+  box-sizing: border-box;
+  background-color: $grey-color;
+  border-radius: 3px;
+  margin-right: 12px;
+  position: relative;
+}

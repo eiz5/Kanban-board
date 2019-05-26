@@ -1,0 +1,11 @@
+@import 'mixins';
+
+$column-width: 272px;
+
+.card {
+  overflow: hidden;
+
+  @include text-field(100%);
+
+  margin: 8px 0 1px 0;
+}

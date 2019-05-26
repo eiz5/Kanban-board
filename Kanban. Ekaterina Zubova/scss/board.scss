@@ -1,0 +1,81 @@
+@import 'mixins';
+
+$column-width: 272px;
+$grey-color: #DFE3E6;
+
+.board {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  padding: 20px;
+
+  @include font-style(normal);
+}
+
+.board__list {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.board__list-item {
+  position: relative;
+  width: $column-width;
+  margin-right: 12px;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  background-color: $grey-color;
+
+  &:hover {
+    .board__button-for-delete-item {
+      display: block;
+    }
+  }
+}
+
+.board__field-container {
+  width: $column-width;
+  height: 97px;
+  padding: 12px;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+  background-color: $grey-color;
+  border-radius: 3px;
+  margin-right: 12px;
+  position: relative;
+}
+
+.board__button-for-showing-field {
+
+  @include button-for-showing-field();
+
+  display: block !important;
+}
+
+.board__button-for-hiding {
+
+  @include button-for-hiding();
+}
+
+.board__button-for-adding-item {
+
+  @include button-for-adding-item();
+
+}
+
+.board__editable-field {
+
+   @include text-field (35px);
+
+}
+
+.board__button-for-delete-item {
+
+  @include button-for-hiding();
+  display: none;
+  top: 5px;
+  right: 5px;
+
+}

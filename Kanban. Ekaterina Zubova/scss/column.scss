@@ -1,0 +1,63 @@
+@import 'mixins';
+
+$column-width: 272px;
+
+.column {
+  height: 100%;
+}
+
+.column__head {
+
+  @include font-style(bold);
+  margin: 18px 0px 0px 12px;
+}
+
+.column__list {
+  overflow-y: scroll;
+  max-height: 480px; //Изменить
+}
+
+.column__field-container {
+  @include field-container();
+}
+
+.column__list-item {
+  position: relative;
+  margin: 0 auto;
+  background: #FFF;
+  width: 248px;
+  box-shadow: 0px 1px 4px rgba(9, 45, 66, 0.25);
+  border-radius: 3px;
+
+  &:hover {
+    .column__button-for-delete-item {
+      display: block;
+    }
+  }
+}
+
+.column__button-for-adding-item {
+  @include button-for-adding-item();
+}
+
+.column__button-for-showing-field{
+  @include button-for-showing-field();
+}
+
+.column__button-for-hiding {
+  @include button-for-hiding();
+}
+
+.column__editable-field {
+  @include text-field (54px);
+}
+
+.column__button-for-delete-item {
+
+  @include button-for-hiding();
+  display: none;
+  top: 5px;
+  right: 5px;
+  background-color: white;
+}
+
